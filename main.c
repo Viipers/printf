@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:00:25 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/15 18:18:55 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/17 10:24:41 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,84 @@ int main(void)
 
 	printf("hello, %s.\n", NULL);
 	ft_printf("hello, %s.\n", NULL);
+
+	printf("%32s\n", NULL);
+	ft_printf("%32s\n", NULL);
+
+	printf("|%3.s\n", NULL);
+	ft_printf("|%3.s\n", NULL);
+
+	//ft_printf("m|%012.9s|\n", "hi low");
+	//printf("r|%012.9s|\n\n", "hi low");
+
+	printf("%.5d\n", 2);
+	ft_printf("%.5d\n", 2);
+
+	printf("%.2d\n", 2350);
+	ft_printf("%.2d\n", 2350);
+
+	printf("%.6d\n", -3);
+	ft_printf("%.6d\n", -3);
+
+	printf("%6d\n", -3);
+	ft_printf("%6d\n", -3);
+
+	printf("%06d\n", -3);
+	ft_printf("%06d\n\n", -3);
+
+	printf("%8.5d\n", 34);
+	ft_printf("%8.5d\n\n", 34);
+
+	printf("%10.5d\n", -216);
+	ft_printf("%10.5d\n\n", -216);
+
+	printf("%10.5d\n", -2168);
+	ft_printf("%10.5d\n\n", -2168);
+
+	printf("%10.5d\n", -21685);
+	ft_printf("%10.5d\n\n", -21685);
+
+	printf("%10.5d\n", -216858);
+	ft_printf("%10.5d\n\n", -216858);
+
+	printf("%10.5d\n", -21685885);
+	ft_printf("%10.5d\n\n", -21685885);
+
+	printf("vrai|%8.5d|\n", 0);
+	ft_printf("mien|%8.5d|\n\n", 0);
+
+	printf("%-5%|\n");
+	ft_printf("%-5%|\n\n");
+
+	printf("%08.5d\n", 34);
+	ft_printf("%08.5d\n\n", 34);
+
+	printf("%010.5d\n", -216);
+	ft_printf("%010.5d\n", -216);
+
+	printf("%.0d\n", 0);
+	ft_printf("%.0d\n", 0);
+
+	printf("vrai|%8.5d|\n", 34);
+	ft_printf("mien|%8.5d|\n\n", 34);
+
+	printf("vrai|%08.5d|\n", 34);
+	ft_printf("mien|%08.5d|\n\n", 34);
+
+	printf("v%%-8.5d = ||%-8.5d||\n", 34);
+	ft_printf("m%%-8.5d = ||%-8.5d||\n", 34);
+
+	printf("%8.5d\n", 0);
+	ft_printf("%8.5d\n", 0);
+
+	printf("%.5u\n", 2);
+	ft_printf("%.5u\n", 2);
+
+	printf("%.5u\n", 2892564);
+	ft_printf("%.5u\n", 2892564);
+
+	printf("%8.5u\n", 34);
+	ft_printf("%8.5u\n", 34);
 
 	return 0;
 }

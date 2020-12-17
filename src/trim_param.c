@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 17:36:01 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/15 16:16:15 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/16 23:02:36 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void		trim_flags(char *str, t_set *param, va_list ap)
 
 void		trim_param(char *str, t_set *param, va_list ap)
 {
+	param->nbchar_output = 0;
 	param->i++;
 	if (str[param->i] == '%')
 		print_percent(param);

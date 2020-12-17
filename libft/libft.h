@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 07:41:37 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/15 17:40:35 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/16 17:24:35 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ int					ft_nbcharuint(unsigned int a);
 int					ft_nbcharuihex(unsigned int src);
 void				ft_putstrn_fd(char *s, int n, int fd);
 int					ft_minvalue(int a, int b);
+int					ft_maxvalue(int a, int b);
 
 #endif

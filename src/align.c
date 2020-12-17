@@ -35,7 +35,31 @@ void	test_nextright(char *str, t_set *param, int glob, void *value)
 			param->i++;
 		}
 		if (str[param->i] == 's')
+		{
+			if ((char *)value == NULL)
+				value = "(null)";
 			put_space(glob, ft_minvalue(param->af_point, (int)ft_strlen((char*) value)), param);
+		}
+		if (str[param->i] == 'd' || str[param->i] == 'i')
+		{
+			param->zero = 0;
+			if (param->af_point == 0)
+				put_space(glob, 0, param);
+			else if ((int)value < 0)
+				put_space(glob, ft_maxvalue(param->af_point + 1, ft_nbcharint((int)value)), param);
+			else
+				put_space(glob, ft_maxvalue(param->af_point, ft_nbcharint((int)value)), param);
+			param->zero = 1;
+		}
+		if (str[param->i] == 'u')
+		{
+			param->zero = 0;
+			if (param->af_point == 0)
+				put_space(glob, 0, param);
+			else
+				put_space(glob, ft_maxvalue(param->af_point, ft_nbcharint((int)value)), param);
+			param->zero = 1;
+		}
 		test_point(str, param, value);
 	}
 
@@ -48,11 +72,22 @@ void	test_right(char *str, t_set *param, va_list ap, int glob)
 	value = va_arg(ap, void*);
 	if (str[param->i] == 'i' || str[param->i] == 'd')
 	{
-		put_space(glob, ft_nbcharint((int)value), param);
-		ft_putnbr_count((int)value, param);
+		if (param->zero == 1 && (int)value < 0)
+		{
+			ft_putchar_count('-', param);
+			put_space(glob, ft_nbcharint((int)value), param);
+			ft_putnbr_count((int)value * -1, param);
+		}
+		else
+		{
+			put_space(glob, ft_nbcharint((int)value), param);
+			ft_putnbr_count((int)value, param);
+		}
 	}
 	if (str[param->i] == 's')
 	{
+		if ((char *)value == NULL)
+			value = "(null)";
 		put_space(glob, ft_strlen((char *)value), param);
 		ft_putstr_count((char *)value, param);
 	}
@@ -74,8 +109,7 @@ void	right_align(char *str, t_set *param, va_list ap)
 {
 	int	glob;
 
-	glob = str[param->i] - '0';
-	param->i++;
+	glob = 0;
 	while (str[param->i] >= '0' && str[param->i] <= '9')
 	{
 		glob = glob * 10 + (str[param->i] - '0');
@@ -88,8 +122,8 @@ void	left_align(char *str, t_set *param, va_list ap)
 {
 	int	glob;
 
-	glob = str[param->i + 1] - '0';
-	param->i = param->i + 2;
+	param->i++;
+	glob = 0;
 	while (str[param->i] >= '0' && str[param->i] <= '9')
 	{
 		glob = glob * 10 + (str[param->i] - '0');
@@ -98,6 +132,7 @@ void	left_align(char *str, t_set *param, va_list ap)
 	param->i--;
 	trim_param(str, param, ap);
 	put_space(glob, param->nbchar_output, param);
+	param->nbchar_output = 0;
 }
 
 void	zero_align(char *str, t_set *param, va_list ap)

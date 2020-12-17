@@ -6,7 +6,7 @@
 #    By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/11 08:07:49 by tsannie           #+#    #+#              #
-#    Updated: 2020/12/15 17:40:52 by tsannie          ###   ########.fr        #
+#    Updated: 2020/12/16 17:24:54 by tsannie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ ft_calloc.c ft_split.c ft_rev_int_tab.c ft_rev_char_tab.c ft_itoa.c \
 ft_putchar_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_strjoin.c \
 ft_strmapi.c ft_strtrim.c ft_substr.c ft_putunbr_fd.c ft_putultoh.c \
 ft_putuihex.c ft_nbcharint.c ft_nbcharhex.c ft_nbcharuint.c \
-ft_nbcharuihex.c ft_putstrn_fd.c ft_minvalue.c\
+ft_nbcharuihex.c ft_putstrn_fd.c ft_minvalue.c ft_maxvalue.c\
 
 OBJ			= $(SRC:.c=.o)
 
