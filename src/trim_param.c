@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 17:36:01 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/16 23:02:36 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/17 11:55:09 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ void		trim_param(char *str, t_set *param, va_list ap)
 		arg_void(ap, param);
 	else if (str[param->i] == 'u')
 		arg_uint(ap, param);
-	else if (str[param->i] == 'x' || str[param->i] == 'X')
+	else if (str[param->i] == 'x')
 		arg_uihex(ap, param);
+	else if (str[param->i] == 'X')
+		arg_uihexm(ap, param);
 	trim_flags(str,param,ap);
 }

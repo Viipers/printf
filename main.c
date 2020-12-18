@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:00:25 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/17 10:24:41 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/18 10:03:44 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,33 @@ int main(void)
 
 	printf("%8.5u\n", 34);
 	ft_printf("%8.5u\n", 34);
+
+	printf("|%.p|\n", NULL);
+	ft_printf("|%.p|\n", NULL);
+
+	printf("|%p|\n", NULL);
+	ft_printf("|%p|\n\n", NULL);
+
+	printf("1 : %2.p|\n", NULL);
+	ft_printf("2 : %2.p|\n\n", NULL);
+
+	printf("%.5p\n", 0);
+	ft_printf("%.5p\n\n\n", 0);
+
+	printf("%2.9p\n", 1234);
+	ft_printf("%2.9p\n\n\n", 1234);
+
+	printf("%.9p\n", 2892564);
+	ft_printf("%.9p\n\n\n", 2892564);
+
+	printf("%9.4p\n", 1234);
+	ft_printf("%9.4p\n\n\n", 1234);
+
+	printf("%9.5p\n", 1234);
+	ft_printf("%9.5p\n\n\n", 1234);
+
+	printf("%9.2p\n", 1234);
+	ft_printf("%9.2p\n\n\n", 1234);
 
 	return 0;
 }

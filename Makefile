@@ -6,12 +6,12 @@
 #    By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 11:00:45 by tsannie           #+#    #+#              #
-#    Updated: 2020/12/14 19:15:31 by tsannie          ###   ########.fr        #
+#    Updated: 2020/12/17 13:04:24 by tsannie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libftprintf.a
-CC			= @gcc -Wall -Wextra -Werror
+CC			= @gcc
 INCLUDES	= -I./includes
 LIBFT		= libft
 

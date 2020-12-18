@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:00:22 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/16 23:28:57 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/17 17:04:15 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct	s_set{
 	int			nbchar_output;
 	int			zero;
 	int			af_point;
+	int			without_pre;
 }				t_set;
 
 int		ft_printf(const char *, ...);
@@ -45,6 +46,7 @@ void	arg_char(va_list ap, t_set *param);
 void	arg_string(va_list ap, t_set *param);
 void	arg_void(va_list ap, t_set *param);
 void	arg_uihex(va_list ap, t_set *param);
+void	arg_uihexm(va_list ap, t_set *param);
 
 void	put_space(int glob, int a, t_set *param);
 void	ft_putnbr_count(int n, t_set *param);
@@ -54,5 +56,6 @@ void	ft_putstrn_count(char *s, t_set *param, int glob);
 void	ft_putultoh_count(unsigned long a, t_set *param);
 void	ft_putunbr_count(unsigned int a, t_set *param);
 void	ft_putuihex_count(unsigned int a, t_set *param);
+void	ft_putuihexm_count(unsigned int a, t_set *param);
 
 #endif

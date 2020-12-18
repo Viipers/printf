@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 07:41:37 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/16 17:24:35 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/17 11:56:01 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 void				ft_putunbr_fd(unsigned int n, int fd);
 void				ft_putuihex(unsigned int src);
+void				ft_putuihexm(unsigned int src);
 int					ft_nbcharint(int a);
 void				ft_putultoh(unsigned long src);
 int					ft_nbcharhex(unsigned long src);

@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:00:18 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/16 23:29:33 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/17 17:16:01 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	print_content(char *str, va_list ap)
 	param->nbchar_output = 0;
 	param->zero = 0;
 	param->af_point = -1;
+	param->without_pre = 1;
 	while (str[param->i])
 	{
 		if (str[param->i] == '%')

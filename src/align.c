@@ -20,10 +20,15 @@ void	test_nextright(char *str, t_set *param, int glob, void *value)
 		put_space(glob, ft_nbcharuint((unsigned int)value), param);
 		ft_putunbr_count((unsigned int)value, param);
 	}
-	if (str[param->i] == 'x' || str[param->i] == 'X')
+	if (str[param->i] == 'x')
 	{
 		put_space(glob, ft_nbcharuihex((unsigned int)value), param);
 		ft_putuihex_count((unsigned int)value, param);
+	}
+	if (str[param->i] == 'X')
+	{
+		put_space(glob, ft_nbcharuihex((unsigned int)value), param);
+		ft_putuihexm_count((unsigned int)value, param);
 	}
 	if (str[param->i] == '.')
 	{
@@ -40,29 +45,36 @@ void	test_nextright(char *str, t_set *param, int glob, void *value)
 				value = "(null)";
 			put_space(glob, ft_minvalue(param->af_point, (int)ft_strlen((char*) value)), param);
 		}
+		param->zero = 0;
 		if (str[param->i] == 'd' || str[param->i] == 'i')
 		{
-			param->zero = 0;
 			if (param->af_point == 0)
 				put_space(glob, 0, param);
 			else if ((int)value < 0)
 				put_space(glob, ft_maxvalue(param->af_point + 1, ft_nbcharint((int)value)), param);
 			else
 				put_space(glob, ft_maxvalue(param->af_point, ft_nbcharint((int)value)), param);
-			param->zero = 1;
 		}
-		if (str[param->i] == 'u')
+		if (str[param->i] == 'u' || str[param->i] == 'x' || str[param->i] == 'X')
 		{
-			param->zero = 0;
 			if (param->af_point == 0)
 				put_space(glob, 0, param);
 			else
-				put_space(glob, ft_maxvalue(param->af_point, ft_nbcharint((int)value)), param);
-			param->zero = 1;
+				put_space(glob, ft_maxvalue(param->af_point, ft_nbcharuint((int)value)), param);
 		}
+		if (str[param->i] == 'p')
+		{
+			if (param->af_point == 0)
+				put_space(glob, 2, param);
+			else
+			{
+				printf("\naf_point\t=\t%d\nvalue\t\t=\t%d\nmax_value\t=\t%d\n", param->af_point, ft_nbcharuint((unsigned long)value), ft_maxvalue(param->af_point , ft_nbcharuint((unsigned long)value)));
+				put_space(glob, ft_maxvalue(param->af_point , ft_nbcharuint((unsigned long)value)), param);
+			}
+		}
+		param->zero = 1;
 		test_point(str, param, value);
 	}
-
 }
 
 void	test_right(char *str, t_set *param, va_list ap, int glob)
