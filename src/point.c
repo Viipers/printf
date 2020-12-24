@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 13:19:38 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/24 13:44:19 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/24 15:15:37 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,10 +142,23 @@ void	test_point(char *str, t_set *param, void *value)
 	param->zero = 0;
 }
 
+void	dispatch_point(char *str, t_set *param, va_list ap, int starneg)
+{
+	if (param->af_point >= 0)
+		test_point(str, param, va_arg(ap, void*));
+	else if (param->af_point < 0 && starneg == 0)
+		left_align(str, param, ap);
+	else
+	{
+		param->i--;
+		trim_param(str, param, ap);
+	}
+}
+
 void	point(char *str, t_set *param, va_list ap)
 {
-	void *value;
-	int starneg;
+	void	*value;
+	int		starneg;
 
 	starneg = 0;
 	param->i++;
@@ -166,16 +179,5 @@ void	point(char *str, t_set *param, va_list ap)
 			param->i++;
 		}
 	}
-	if (param->af_point >= 0)
-	{
-		value = va_arg(ap, void*);
-		test_point(str, param, value);
-	}
-	else if (param->af_point < 0 && starneg == 0)
-		left_align(str, param, ap);
-	else
-	{
-		param->i--;
-		trim_param(str, param, ap);
-	}
+	dispatch_point(str, param, ap, starneg);
 }

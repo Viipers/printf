@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:00:25 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/24 14:01:43 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/24 14:46:22 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -279,17 +279,18 @@ int main(void)
 	printf("%0*.*p|\n",a, b, f);
 	ft_printf("%0*.*p|\n\n",a, b, f);
 */
-	a = 1;
+	a = 8;
 	b = -2;
 	printf("\na = %d | b = %d | %%*.*s\n\n",a,b);
 	printf("%*.*s, %*.*s, %*.*s, %*.*s, %*.*s, %*.*s, %*.*s, %*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
 	ft_printf("%*.*s, %*.*s, %*.*s, %*.*s, %*.*s, %*.*s, %*.*s, %*.*s\n\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
 
-	a = 2;
+	a = 8;
 	b = -2;
 	printf("\na = %d | b = %d | %%*.*s\n\n",a,b);
 	printf("%*.*s|\n",a, b, q);
-	ft_printf("%*.*s|\n",a, b, q);
+	ft_printf("%*.*s|\n\n",a, b, q);
+
 
 
 	return 0;

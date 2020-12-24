@@ -54,6 +54,8 @@ void	test_nextright(char *str, t_set *param, int glob, void *value)
 				value = "(null)";
 			if (param->af_point >= 0)
 				put_space(glob, ft_minvalue(param->af_point, (int)ft_strlen((char*) value)), param);
+			else
+				put_space(glob, ft_maxvalue(param->af_point, (int)ft_strlen((char*) value)), param);
 		}
 		if (param->af_point >= 0)
 			param->zero = 0;

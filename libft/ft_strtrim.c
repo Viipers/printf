@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 10:37:47 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/16 15:43:22 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/24 14:36:30 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		be_charset(char a, char *charset)
 	return (0);
 }
 
-int		size_global(char *src, char *charset)
+int		size_glob(char *src, char *charset)
 {
 	size_t	len;
 	size_t	i;
@@ -70,7 +70,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	src = (char *)s1;
 	charset = (char *)set;
-	len = size_global(src, charset);
+	len = size_glob(src, charset);
 	if (!s1)
 		return (0);
 	if (!(res = malloc(sizeof(char) * len + 1)))
