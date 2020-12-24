@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:00:22 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/17 17:04:15 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/19 11:23:18 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@ typedef struct	s_set{
 	int			n;
 	int			nbchar_output;
 	int			zero;
-	int			af_point;
 	int			without_pre;
+	int			stock_star;
+	int			first_star;
+	int			af_point;
+	int			first_afpoint;
 }				t_set;
 
 int		ft_printf(const char *, ...);
@@ -38,6 +41,7 @@ void	left_align(char *str, t_set *param, va_list ap);
 void	zero_align(char *str, t_set *param, va_list ap);
 void	test_point(char *str, t_set *param, void *value);
 void	point(char *str, t_set *param, va_list ap);
+void	star(char *str, t_set *param, va_list ap);
 
 void	print_percent(t_set *param);
 void	arg_int(va_list ap, t_set *param);

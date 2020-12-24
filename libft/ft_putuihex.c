@@ -6,37 +6,41 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 19:20:52 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/02 01:08:25 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/21 09:40:31 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
 void	ft_putuihex(unsigned int src)
 {
-	char *res;
+	char out;
 	int i;
 
 	i = 0;
-	src == 0 ? ft_putchar_fd('0', 1) : 0;
-	res = malloc(sizeof(char) * ft_nbcharuihex(src) + 1);
-	while (src)
+	if (src == 0)
+		ft_putchar_fd('0', 1);
+	else
 	{
-		if (src % 16 < 10)
-			res[i] = (src % 16) + 48;
-		else
+		if (src)
 		{
-			(src % 16) == 10 ? res[i] = 'a' : 0;
-			(src % 16) == 11 ? res[i] = 'b' : 0;
-			(src % 16) == 12 ? res[i] = 'c' : 0;
-			(src % 16) == 13 ? res[i] = 'd' : 0;
-			(src % 16) == 14 ? res[i] = 'e' : 0;
-			(src % 16) == 15 ? res[i] = 'f' : 0;
-		}
+			if (src % 16 < 10)
+				out = (src % 16) + 48;
+			else
+			{
+				(src % 16) == 10 ? out = 'a' : 0;
+				(src % 16) == 11 ? out = 'b' : 0;
+				(src % 16) == 12 ? out = 'c' : 0;
+				(src % 16) == 13 ? out = 'd' : 0;
+				(src % 16) == 14 ? out = 'e' : 0;
+				(src % 16) == 15 ? out = 'f' : 0;
+			}
 		i++;
 		src = src / 16;
+		if (src)
+			ft_putuihex(src);
+		ft_putchar_fd(out, 1);
+		}
 	}
-	ft_rev_char_tab(res);
-	ft_putstr_fd(res ,1);
-	free(res);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_int.c                                          :+:      :+:    :+:   */
+/*   arg_1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 11:38:00 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/17 11:21:01 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/21 11:22:35 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,12 @@ void	arg_int(va_list ap, t_set *param)
 
 	value = va_arg(ap, int);
 	ft_putnbr_count(value, param);
+}
+
+void	arg_void(va_list ap, t_set *param)
+{
+	unsigned long value;
+
+	value = (unsigned long)va_arg(ap, void *);
+	ft_putultoh_count(value, param);
 }
