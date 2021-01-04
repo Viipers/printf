@@ -6,7 +6,7 @@
 #    By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 11:00:45 by tsannie           #+#    #+#              #
-#    Updated: 2020/12/19 21:41:59 by tsannie          ###   ########.fr        #
+#    Updated: 2020/12/27 20:09:41 by tsannie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,9 @@ LIBFT		= libft
 
 RM			= @rm -rf
 
-SOURCES		= ft_printf.c trim_param.c arg_1.c arg_2.c align.c \
-ft_tools_count1.c ft_tools_count2.c point.c star.c
+SOURCES		= ft_printf.c ft_trimparam.c ft_arg_1.c ft_arg_2.c ft_align1.c \
+ft_align2.c ft_tools_count1.c ft_tools_count2.c ft_point1.c ft_point2.c \
+ft_star.c ft_alignpoint.c
 
 BLACK		:= $(shell tput -Txterm setaf 0)
 RED			:= $(shell tput -Txterm setaf 1)

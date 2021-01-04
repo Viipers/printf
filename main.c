@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:00:25 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/24 14:46:22 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/27 20:19:17 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	ft_printf("Bonjour j%c fais un %% %i %s numero %d !\n",'e',54,"test",1);
+	/*ft_printf("Bonjour j%c fais un %% %i %s numero %d !\n",'e',54,"test",1);
 	printf("Bonjour j%c fais un %% %i %s numero %d !\n",'e',54,"test",1);
 
 	char ab;
@@ -51,7 +51,7 @@ int main(void)
 	printf("memory address = %20u\n", 128);
 	ft_printf("memory address = %20u\n", 128);
 
-	/*printf("%-10syo000|\n", "1");
+	printf("%-10syo000|\n", "1");
 	ft_printf("%-10syo000|\n", "1");
 
 	printf("%-i|\n",42);
@@ -201,21 +201,24 @@ int main(void)
 
 	printf("%000000s\n", "hi low");
 	ft_printf("%000000s\n", "hi low");
+
 	printf("%00000015s\n", "hi low");
 	ft_printf("%00000015s\n", "hi low");
+
 	printf("%0*i|\n", -7, -54);
-	ft_printf("%0*i|\n", -7, -54);
+	ft_printf("%0*i|\n", -7, -54);*/
 
 	printf("%.-3s|\n", "hello");
 	ft_printf("%.-3s|\n\n", "hello");
 
 	printf("%.-6i|\n", -3);
 	ft_printf("%.-6i|\n", -3);
-	printf("%.*i|\n", -6, -3);
+
+	/*printf("%.*i|\n", -6, -3);
 	ft_printf("%.*i|\n\n", -6, -3);
 
 	printf("%.-1i|\n", -5);
-	printf("%.-1i|\n", -5);*/
+	printf("%.-1i|\n", -5);
 
 	int		a = -4;
 	int		b = 0;
@@ -273,12 +276,12 @@ int main(void)
 	printf("%0*.*d|\n",a, b, j);
 	ft_printf("%0*.*d|\n\n",a, b, j);
 
-/*	a = 15;
+	a = 15;
 	b = -2;
 	printf("\na = %d | b = %d | d = %d | %%0*.*d\n\n",a,b,f);
 	printf("%0*.*p|\n",a, b, f);
 	ft_printf("%0*.*p|\n\n",a, b, f);
-*/
+
 	a = 8;
 	b = -2;
 	printf("\na = %d | b = %d | %%*.*s\n\n",a,b);
@@ -291,7 +294,8 @@ int main(void)
 	printf("%*.*s|\n",a, b, q);
 	ft_printf("%*.*s|\n\n",a, b, q);
 
-
+	printf("%0*.*d|\n",-5, -89);
+	ft_printf("%0*.*d|\n",-5, -89);*/
 
 	return 0;
 }

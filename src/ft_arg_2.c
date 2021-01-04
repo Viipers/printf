@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 12:02:07 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/19 21:41:20 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/27 19:02:39 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	arg_char(va_list ap, t_set *param)
 {
-	char value;
+	char	value;
 
 	value = (char)va_arg(ap, int);
-	ft_putchar_count(value , param);
+	ft_putchar_count(value, param);
 }
 
 void	arg_string(va_list ap, t_set *param)

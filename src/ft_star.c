@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   star.c                                             :+:      :+:    :+:   */
+/*   ft_star.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:08:44 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/24 14:45:02 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/27 19:01:44 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	star(char *str, t_set *param, va_list ap)
 		param->zero = 0;
 	if (param->stock_star > 0)
 	{
-		//printf("\nJE SUIS LA, je suis %d\n",param->stock_star);
 		param->i++;
 		right_align(str, param, ap);
 	}

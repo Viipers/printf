@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:00:22 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/19 11:23:18 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/12/27 19:39:42 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,17 @@ int		ft_printf(const char *, ...);
 void	trim_param(char *str, t_set *param, va_list ap);
 
 void	right_align(char *str, t_set *param, va_list ap);
+void	test_right(char *str, t_set *param, va_list ap, int glob);
+void	test_alignpoint(char *str, t_set *param, int glob, void *value);
 void	left_align(char *str, t_set *param, va_list ap);
 void	zero_align(char *str, t_set *param, va_list ap);
 void	test_point(char *str, t_set *param, void *value);
 void	point(char *str, t_set *param, va_list ap);
 void	star(char *str, t_set *param, va_list ap);
+
+void	test_lesszero(char *str, t_set *param, void *value, int p_zero);
+void	test_equalszero(char *str, t_set *param, void *value);
+void	test_supzero(char *str, t_set *param, void *value);
 
 void	print_percent(t_set *param);
 void	arg_int(va_list ap, t_set *param);
