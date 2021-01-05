@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 10:20:35 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/15 10:31:36 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/01/04 13:31:52 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned	i;
 	char		*res;
 
-	if (!(res = malloc(sizeof(char) * ft_strlen(s) + 1)) || !(s))
+	if (!s || !(res = malloc(sizeof(char) * ft_strlen(s) + 1)))
 		return (NULL);
 	i = 0;
 	while (s[i])
@@ -25,5 +25,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		res[i] = f(i, s[i]);
 		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 18:53:40 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/12 17:38:51 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/01/04 13:08:06 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	e;
 
 	e = 0;
+	if (!src)
+		return (0);
 	str = (char *)src;
 	while (str[e])
 		e++;

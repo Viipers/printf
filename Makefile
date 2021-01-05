@@ -6,7 +6,7 @@
 #    By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 11:00:45 by tsannie           #+#    #+#              #
-#    Updated: 2020/12/27 20:09:41 by tsannie          ###   ########.fr        #
+#    Updated: 2021/01/05 15:53:33 by tsannie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,11 +46,6 @@ $(NAME): 	$(OBJ)
 			@ar -rc $(NAME) $(OBJ)
 			@ranlib $(NAME)
 			@echo "${GREEN}The $(NAMEC) ${GREEN}has been build !${END}"
-
-test:
-			@make all
-			@make clean
-			$(CC) main.c $(NAME)
 
 clean:
 			@make clean -C $(LIBFT)

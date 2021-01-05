@@ -6,13 +6,13 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 21:25:36 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/24 14:37:30 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/01/04 15:00:07 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		be_char(char a, char charset)
+int		be_charset(char a, char charset)
 {
 	if (a == charset)
 		return (1);
@@ -30,9 +30,9 @@ int		count_word(const char *str, char charset)
 	while (str[i])
 	{
 		n = 0;
-		while (str[i] && be_char(str[i], charset) == 1)
+		while (str[i] && be_charset(str[i], charset) == 1)
 			i++;
-		while (str[i] && be_char(str[i], charset) == 0)
+		while (str[i] && be_charset(str[i], charset) == 0)
 		{
 			n++;
 			i++;
@@ -54,9 +54,9 @@ void	alloc(char **res, const char *str, char charset)
 	while (str[i])
 	{
 		n = 0;
-		while (str[i] && be_char(str[i], charset) == 1)
+		while (str[i] && be_charset(str[i], charset) == 1)
 			i++;
-		while (str[i] && be_char(str[i], charset) == 0)
+		while (str[i] && be_charset(str[i], charset) == 0)
 		{
 			n++;
 			i++;
@@ -69,7 +69,7 @@ void	alloc(char **res, const char *str, char charset)
 	}
 }
 
-void	fill_res(char **res, const char *str, char charset)
+void	fill(char **res, const char *str, char charset)
 {
 	int n;
 	int word;
@@ -80,9 +80,9 @@ void	fill_res(char **res, const char *str, char charset)
 	while (str[i])
 	{
 		n = 0;
-		while (str[i] && be_char(str[i], charset) == 1)
+		while (str[i] && be_charset(str[i], charset) == 1)
 			i++;
-		while (str[i] && be_char(str[i], charset) == 0)
+		while (str[i] && be_charset(str[i], charset) == 0)
 		{
 			res[word][n] = str[i];
 			n++;
@@ -105,7 +105,7 @@ char	**ft_split(const char *str, char charset)
 	if (!(res = malloc(sizeof(char *) * count_word(str, charset) + 1)))
 		return (NULL);
 	alloc(res, str, charset);
-	fill_res(res, str, charset);
+	fill(res, str, charset);
 	res[count_word(str, charset)] = 0;
 	return (res);
 }

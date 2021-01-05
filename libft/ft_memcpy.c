@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 15:23:12 by tsannie           #+#    #+#             */
-/*   Updated: 2020/10/12 16:29:50 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/01/04 12:37:05 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	res = (unsigned char *)dst;
 	str = (unsigned char *)src;
+	if (src == dst || n == 0)
+		return (dst);
 	while (i < n)
 	{
 		res[i] = str[i];

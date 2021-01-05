@@ -6,13 +6,13 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 10:37:47 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/24 14:36:30 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/01/04 13:22:36 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		be_charset(char a, char *charset)
+int		be_char(char a, char *charset)
 {
 	size_t i;
 
@@ -33,10 +33,10 @@ int		size_glob(char *src, char *charset)
 
 	len = ft_strlen(src);
 	i = 0;
-	while (be_charset(src[len - 1], charset) == 1 && src[len - 1])
+	while (be_char(src[len - 1], charset) == 1 && src[len - 1])
 		len--;
 	if (len > 0)
-		while (be_charset(src[i], charset) == 1)
+		while (be_char(src[i], charset) == 1)
 		{
 			i++;
 			len--;
@@ -44,14 +44,14 @@ int		size_glob(char *src, char *charset)
 	return (len);
 }
 
-void	fill(char *src, char *charset, char *res, size_t len)
+void	filling(char *src, char *charset, char *res, size_t len)
 {
 	size_t	i;
 	size_t	e;
 
 	i = 0;
 	e = 0;
-	while (be_charset(src[i], charset) == 1)
+	while (be_char(src[i], charset) == 1)
 		i++;
 	while (len > e)
 	{
@@ -70,11 +70,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	src = (char *)s1;
 	charset = (char *)set;
+	if (!src)
+		return (NULL);
 	len = size_glob(src, charset);
-	if (!s1)
-		return (0);
 	if (!(res = malloc(sizeof(char) * len + 1)))
-		return (0);
-	fill(src, charset, res, len);
+		return (NULL);
+	filling(src, charset, res, len);
 	return (res);
 }
