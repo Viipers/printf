@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 13:19:38 by tsannie           #+#    #+#             */
-/*   Updated: 2021/01/04 11:46:56 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/01/06 18:38:32 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,18 @@ void	dispatch_point(char *str, t_set *param, va_list ap, int starneg)
 	}
 }
 
+int		ifstar(t_set *param, va_list ap, int starneg)
+{
+	param->af_point = va_arg(ap, int);
+	if (param->af_point < 0)
+		starneg = 1;
+	param->i++;
+	param->first_afpoint = 1;
+	return (starneg);
+}
+
 void	point(char *str, t_set *param, va_list ap)
 {
-	void	*value;
 	int		starneg;
 	int		neg;
 
@@ -59,11 +68,7 @@ void	point(char *str, t_set *param, va_list ap)
 	param->i++;
 	if (str[param->i] == '*')
 	{
-		param->af_point = va_arg(ap, int);
-		if (param->af_point < 0)
-			starneg = 1;
-		param->i++;
-		param->first_afpoint = 1;
+		starneg = ifstar(param, ap, starneg);
 	}
 	if (param->first_afpoint == 0)
 	{

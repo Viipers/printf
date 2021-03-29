@@ -6,12 +6,13 @@
 #    By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/11 08:07:49 by tsannie           #+#    #+#              #
-#    Updated: 2020/12/17 11:56:24 by tsannie          ###   ########.fr        #
+#    Updated: 2021/03/29 12:48:56 by tsannie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
-CC			= @gcc -Wall -Wextra -Werror
+CC			= @gcc
+CFLAGS		= -Wall -Wextra -Werror
 INCLUDE		= libft.h
 RM			= @rm -rf
 
@@ -36,40 +37,28 @@ ft_putchar_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_strjoin.c \
 ft_strmapi.c ft_strtrim.c ft_substr.c ft_putunbr_fd.c ft_putultoh.c \
 ft_putuihex.c ft_nbcharint.c ft_nbcharhex.c ft_nbcharuint.c \
 ft_nbcharuihex.c ft_putstrn_fd.c ft_minvalue.c ft_maxvalue.c ft_putuihexm.c \
+ft_lstadd_back.c ft_lstlast.c ft_lstnew.c ft_lstmap.c \
+ft_lstsize.c ft_lstadd_front.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 
 OBJ			= $(SRC:.c=.o)
 
-BONUS		= ft_lstadd_back.c ft_lstlast.c \
-ft_lstsize.c ft_lstadd_front.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-ft_lstnew.c ft_lstmap.c
-
-BONUS_OBJ	= $(BONUS:.c=.o)
-
 all:		$(NAME)
 
+%.o: %.c
+			@printf "${PURPLE}${BOLD}Start compile libft ... %-33.33s\r${END}" $@
+			${CC} ${CFLAGS} -c $< -o $@
+
 $(NAME): 	$(OBJ)
-			@echo "${PURPLE}${BOLD}Start compile ...${END}"
 			@ar rc $(NAME) $(OBJ)
 			@ranlib $(NAME)
-			@echo "${GREEN}The $(NAMEC) ${GREEN}has been build !${END}"
-
-bonus:		$(OBJ) $(BONUS_OBJ)
-			@echo "${PURPLE}${BOLD}Start compile ...${END}"
-			@ar rc $(NAME) ${BONUS_OBJ} $(OBJ)
-			@ranlib $(NAME)
-			@echo "${GREEN}The $(NAMEC) ${GREEN}has been build" \
-				"(with ${BOLD}${WHITE}$@${END}${GREEN}) !${END}"
+			@echo "\n\n${GREEN}The $(NAMEC) ${GREEN}has been build !${END}"
 
 clean:
-			$(RM) $(OBJ) $(BONUS_OBJ)
-			@echo "${YELLOW}The $(NAMEC) ${YELLOW}has been cleaned up !" \
-			 "(with ${BOLD}${WHITE}$@${END}${YELLOW}) !${END}"
+			$(RM) $(OBJ)
 
 fclean:		clean
 			$(RM) $(NAME)
-			@echo "${YELLOW}The $(NAMEC) ${YELLOW}has been deleted !" \
-				"(with ${BOLD}${WHITE}$@${END}${YELLOW}) !${END}"
 
 re:			fclean all
 
-.PHONY:		all bonus clean fclean re
+.PHONY:		all clean fclean re

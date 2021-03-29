@@ -6,12 +6,13 @@
 #    By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 11:00:45 by tsannie           #+#    #+#              #
-#    Updated: 2021/01/05 15:53:33 by tsannie          ###   ########.fr        #
+#    Updated: 2021/03/29 12:49:32 by tsannie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libftprintf.a
 CC			= @gcc
+CFLAGS		= -Wall -Wextra -Werror
 INCLUDES	= -I./includes
 LIBFT		= libft
 
@@ -33,6 +34,9 @@ BOLD		:=$(shell tput -Txterm bold)
 END			:= $(shell tput -Txterm sgr0)
 NAMEC		= ${BLUE}${BOLD}$(NAME)${END}
 
+%.o: %.c
+			@printf "${PURPLE}${BOLD}Start compile ... %-33.33s\r${END}" $@
+			${CC} ${CFLAGS} -c $< -o $@
 
 SRCS 		= $(addprefix src/, $(SOURCES))
 
@@ -41,23 +45,22 @@ OBJ			= $(addprefix src/, $(SOURCES:.c=.o))
 all:		$(NAME)
 
 $(NAME): 	$(OBJ)
-			@make bonus -C $(LIBFT)
+			@echo "\n"
+			@make -C $(LIBFT)
 			@cp libft/libft.a ./$(NAME)
 			@ar -rc $(NAME) $(OBJ)
 			@ranlib $(NAME)
-			@echo "${GREEN}The $(NAMEC) ${GREEN}has been build !${END}"
+			@echo "\n${GREEN}The $(NAMEC) ${GREEN}has been build !${END}"
 
 clean:
 			@make clean -C $(LIBFT)
 			$(RM) $(OBJ) $(BONUS_OBJ)
-			@echo "${YELLOW}The $(NAMEC) ${YELLOW}has been cleaned up !" \
-			 "(with ${BOLD}${WHITE}$@${END}${YELLOW}) !${END}"
+			@echo "${LIGHTPURPLE}Cleaning ...${END}"
 
 fclean:		clean
 			@make fclean -C $(LIBFT)
 			$(RM) $(NAME)
-			@echo "${YELLOW}The $(NAMEC) ${YELLOW}has been cleaned up !" \
-			 "(with ${BOLD}${WHITE}$@${END}${YELLOW}) !${END}"
+			@echo "\n${LIGHTPURPLE}Delete $(NAMEC)${LIGHTPURPLE} ...${END}"
 
 re:			fclean all
 

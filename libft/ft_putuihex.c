@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 19:20:52 by tsannie           #+#    #+#             */
-/*   Updated: 2020/12/21 09:40:31 by tsannie          ###   ########.fr       */
+/*   Updated: 2021/01/05 16:12:26 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 
 void	ft_putuihex(unsigned int src)
 {
-	char out;
-	int i;
+	char	out;
 
-	i = 0;
 	if (src == 0)
 		ft_putchar_fd('0', 1);
 	else
@@ -36,11 +34,10 @@ void	ft_putuihex(unsigned int src)
 				(src % 16) == 14 ? out = 'e' : 0;
 				(src % 16) == 15 ? out = 'f' : 0;
 			}
-		i++;
-		src = src / 16;
-		if (src)
-			ft_putuihex(src);
-		ft_putchar_fd(out, 1);
+			src = src / 16;
+			if (src)
+				ft_putuihex(src);
+			ft_putchar_fd(out, 1);
 		}
 	}
 }
