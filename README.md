@@ -1,5 +1,5 @@
 # ft_printf
-the objective of this project of this project is to reproduce the real printf of stdio in C.
+The objective of this project is to reproduce the real printf of stdio in C.
 
 42cursus - (2020-2021) 💻
 
